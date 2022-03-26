@@ -3,7 +3,7 @@
 mod shell;
 mod core;
 
-fn display_todos(todo_list: &core::TodoList) {
+fn display_todos(todo_list: &mut core::TodoList) {
     println!("------ Todos ------");
     todo_list.list();
     println!("-------------------");
@@ -24,7 +24,7 @@ fn handle_input_values(value: &u8, todo_list: &mut core::TodoList) {
             todo_list.toggle(shell::int_prompt("Enter the id of the todo you want to toggle:"));
             shell::clear_screen();
         }
-        3 => {
+        3 => { // exit
             std::process::exit(0);
         }
         _ => {
@@ -45,7 +45,7 @@ fn handle_input_commands<T>(input: &Result<u8, T>,
 fn main() {
     let mut todo_list = core::TodoList::new();
     shell::head();
-    display_todos(&todo_list);
+    display_todos(&mut todo_list);
     loop {
         shell::display_options(&vec![
             "insert", "remove", "toggle", "exit"
@@ -53,6 +53,6 @@ fn main() {
         let input = shell::prompt("Enter your choice:")
                             .trim().parse::<u8>();
         handle_input_commands(&input, &mut todo_list);
-        display_todos(&todo_list);
+        display_todos(&mut todo_list);
     }
 }
