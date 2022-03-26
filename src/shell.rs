@@ -15,6 +15,19 @@ pub fn input() -> String {
     input.trim().to_lowercase().to_string()
 }
 
+pub fn prompt(message: &str) -> String {
+    println!("{}", message);
+    input()
+}
+
+pub fn int_prompt(message: &str) -> i32 {
+    prompt(message)
+     .trim()
+     .parse::<i32>()
+     .expect("Please enter a number")
+}
+
+
 pub fn display_options(opts: &Vec<&str>) {
     println!("\nOptions:");
     for (i, opt) in opts.iter().enumerate() {
