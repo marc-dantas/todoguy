@@ -21,10 +21,13 @@ pub fn prompt(message: &str) -> String {
 }
 
 pub fn int_prompt(message: &str) -> i32 {
-    prompt(message)
-     .trim()
-     .parse::<i32>()
-     .expect("Please enter a number")
+    match prompt(message).trim().parse::<i32>() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Invalid option");
+            0
+        },
+    }
 }
 
 

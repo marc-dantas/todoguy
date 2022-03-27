@@ -37,7 +37,7 @@ fn handle_input_commands<T>(input: &Result<u8, T>,
                         todo_list: &mut core::TodoList) {
     match input {
         Ok(value) => handle_input_values(value, todo_list),
-        Err(_) => println!("Error"),
+        Err(_) => println!("Invalid option"),
     }
 }
 
