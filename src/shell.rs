@@ -31,10 +31,10 @@ pub fn int_prompt(message: &str) -> i32 {
 }
 
 
-pub fn display_options(opts: &Vec<&str>) {
-    println!("\nOptions:");
+pub fn display_options(title: &str, opts: &Vec<&str>) {
+    println!("\n{}", title);
     for (i, opt) in opts.iter().enumerate() {
-        println!("\t{}: {}", i, opt);
+        println!("\t{} - {}", i, opt);
     }
 }
 

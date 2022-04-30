@@ -8,7 +8,7 @@ TodoGuy has a very simple way of working. You have the to-do list, which contain
 TodoGuy has the following actions
 - `insert` - Inserts a new to-do in the to-do list.
 - `delete` - Deletes a to-do from the to-do list.
-- `toggle` - Complete or not complete the to-do
-- `exit` - Exits the application
+- `toggle` - Complete or not complete the to-do.
+- `exit` - Exits the application.
 
 > By [@marc-dantas](https://github.com/marc-dantas/)

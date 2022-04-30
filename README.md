@@ -5,7 +5,5 @@
 
 #### Features
 - Simple to use;
-- Cool;
+- Open-source :);
 - Made in [Rust programming language](https://www.rust-lang.org/).
-
-> By [@marc-dantas](https://github.com/marc-dantas/)

@@ -34,21 +34,20 @@ fn handle_input_values(value: &u8, todo_list: &mut core::TodoList) {
 }
 
 fn handle_input_commands<T>(input: &Result<u8, T>,
-                        todo_list: &mut core::TodoList) {
-    match input {
+    todo_list: &mut core::TodoList) {
+        match input {
         Ok(value) => handle_input_values(value, todo_list),
         Err(_) => println!("Invalid option"),
     }
 }
-
 
 fn main() {
     let mut todo_list = core::TodoList::new();
     shell::head();
     display_todos(&mut todo_list);
     loop {
-        shell::display_options(&vec![
-            "insert", "remove", "toggle", "exit"
+        shell::display_options("All options:", &vec![
+            "Insert", "Remove", "Toggle", "Exit"
         ]);
         let input = shell::prompt("Enter your choice:")
                             .trim().parse::<u8>();
@@ -56,3 +55,4 @@ fn main() {
         display_todos(&mut todo_list);
     }
 }
+
