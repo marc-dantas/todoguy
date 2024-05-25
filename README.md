@@ -1,9 +1,30 @@
-## TodoGuy
+# TodoGuy
+A simple terminal-based todo-list application built in Rust.
 
-#### Docs
-- [Here](./docs.md)
+## Getting started
+To use TodoGuy, you need Cargo and Rust installed on your machine.
 
-#### Features
-- Simple to use;
-- Open-source :);
-- Made in [Rust programming language](https://www.rust-lang.org/).
+To build TodoGuy, you'll use `cargo`.
+After cloning the repository, in the TodoGuy's directory, run:
+```console
+$ cargo build --release
+```
+And to use it, run:
+```console
+$ ./target/release/todoguy # or target\release\todoguy.exe on Windows
+```
+
+## Commands
+
+| **Command**   | **Description**                             |
+| ------------- | ------------------------------------------- |
+| `N`           | Create a new todo                           |
+| `X`           | Delete the selected todo                    |
+| `W`/`S`       | Move selection up/down                      |
+| `A`/`D`       | Toggle checked/unchecked todo               |
+| `C`           | Show the credits                            |
+| `H`           | Show the help message                       |
+
+---
+
+> By marc-dantas
